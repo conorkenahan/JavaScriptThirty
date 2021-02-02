@@ -33,13 +33,23 @@ function findMatches(wordToMatch, places) {
 }
 
 function displayMatches() {
-  
+  const matchArray = findMatches(this.value, places);
+  const html = matchArray.map(place => {
+    return `
+    <li>
+      <span class = 'name'>${place.city}, ${place.state}</span>
+      <span> calss='population'>${place.population}</span>
+    </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
 }
 
-const searchINput = document.querySelector('.search');
+const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
-searchInput.addEventListener('change', displayMatches)
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
 
 </script>
 </body>
