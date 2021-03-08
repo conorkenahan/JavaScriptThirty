@@ -10,13 +10,25 @@ const ranges = player.querySelector('.player__slider');
 
 /* build functions */ 
 
-function togglePLay() {
+function togglePlay() {
+    console.log('test');
     if(video.paused) {
         video.play();
+        toggle.textContent = '►';
     }
     else {
         video.pause();
+        toggle.textContent = '❚ ❚';
     }
 }
 
+function updateButton() {
+
+}
+
 /* hook up event listeners */ 
+
+video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+toggle.addEventListener('click', togglePlay);
