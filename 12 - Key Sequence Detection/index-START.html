@@ -7,6 +7,15 @@
 </head>
 <body>
 <script>
+
+  const pressed = [];
+  const secretCode = 'conor';
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key)
+    console.log(pressed)
+  })
+
 </script>
 </body>
 </html>
